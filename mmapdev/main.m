@@ -128,3 +128,9 @@ int main(int argc, char * argv[]) {
     }
 }
 
+// see: https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man2/mmap.2.html
+// http://man7.org/linux/man-pages/man2/mmap.2.html
+// https://searchcode.com/codesearch/view/45933225/
+// https://searchcode.com/codesearch/view/45933225/
+// https://lemire.me/blog/2012/06/26/which-is-fastest-read-fread-ifstream-or-mmap/
+
