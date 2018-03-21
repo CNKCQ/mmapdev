@@ -19,12 +19,12 @@
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {
-        size_t bytesWritten = 0;
+        size_t len = 0;
         int  offset = 0;
         char  *text1 = "Data for file 1.";
         char  *text2 = "Data for file 2.";
         int fd1,fd2;
-        int pageSize;
+        int page_size;
         void *address;
         void *address2;
 
@@ -35,31 +35,30 @@ int main(int argc, char * argv[]) {
                    (O_CREAT | O_TRUNC | O_RDWR),
                    (S_IRWXU | S_IRWXG | S_IRWXO) );
 
-        bytesWritten = write(fd1, text1, strlen(text1));
-        if ( bytesWritten != strlen(text1) ) {
+        len = write(fd1, text1, strlen(text1));
+        if ( len != strlen(text1) ) {
             perror("write() error");
-            //            int closeRC = close(fd1);
+            //  int closeRC = close(fd1);
             return -1;
         }
         const char *dir2 = [[NSString stringWithFormat:@"%@mmaptest2", tmpDir] cStringUsingEncoding:NSUTF8StringEncoding];
         fd2 = open(dir2,
                    (O_CREAT | O_TRUNC | O_RDWR),
-                   (S_IRWXU | S_IRWXG | S_IRWXO) );
+                   (S_IRWXU | S_IRWXG | S_IRWXO));
 
-        bytesWritten = write(fd2, text2, strlen(text2));
-        if ( bytesWritten != strlen(text2) )
+        len = write(fd2, text2, strlen(text2));
+        if ( len != strlen(text2) )
             perror("write() error");
 
-        pageSize = (int)sysconf(_SC_PAGESIZE);
+        page_size = (int)sysconf(_SC_PAGESIZE);
         {
-
-            //                off_t lastoffset = lseek( fd1, PageSize-1, SEEK_SET);
+            //  off_t lastoffset = lseek(fd1, PageSize-1, SEEK_SET);
             {
-                bytesWritten = write(fd1, " ", 1);   /* grow file 1 to 1 page. */
+                len = write(fd1, " ", 1);   /* grow file 1 to 1 page. */
 
-                //                    off_t lastoffset = lseek( fd2, PageSize-1, SEEK_SET);
+                //  off_t lastoffset = lseek( fd2, PageSize-1, SEEK_SET);
 
-                bytesWritten = write(fd2, " ", 1);   /* grow file 2 to 1 page. */
+                len = write(fd2, " ", 1);   /* grow file 2 to 1 page. */
                 /*
                  *  We want to show how to memory map two files with
                  *  the same memory map.  We are going to create a two page
@@ -72,7 +71,7 @@ int main(int argc, char * argv[]) {
                 int len;
 
                 offset = 0;
-                len = pageSize;   /* Map one page */
+                len = page_size;   /* Map one page */
 //                void *mmap(void *addr, size_t length, int prot, int flags,
 //                           int fd, off_t offset);
                 address = mmap(NULL,
@@ -80,14 +79,14 @@ int main(int argc, char * argv[]) {
                                PROT_READ,
                                MAP_SHARED,
                                fd1,
-                               offset );
-                if ( address != MAP_FAILED ) {
-                    address2 = mmap( ((char*)address)+pageSize,
+                               offset);
+                if (address != MAP_FAILED) {
+                    address2 = mmap(((char*)address) + page_size,
                                     len,
                                     PROT_READ,
                                     MAP_SHARED | MAP_FIXED, fd2,
-                                    offset );
-                    if ( address2 != MAP_FAILED ) {
+                                    offset);
+                    if (address2 != MAP_FAILED) {
                         /* print data from file 1 */
                         printf("\n%s",dir1);
                         printf("\n%s",dir2);
@@ -105,26 +104,31 @@ int main(int argc, char * argv[]) {
                 /*
                  *  Unmap two pages.
                  */
-                if ( munmap(address, 2*pageSize) < 0) {
+                if (munmap(address, 2 * page_size) < 0) {
                     perror("munmap() error");
                 }
                 else;
-
             }
         }
         close(fd2);
-        unlink( dir1);
+        unlink(dir1);
 
         close(fd1);
-        unlink( dir2);
+        unlink(dir2);
         /*
          *  Unmap two pages.
          */
-        if ( munmap(address, 2*pageSize) < 0) {
+        if (munmap(address, 2 * page_size) < 0) {
             perror("munmap() error");
         }
         
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }
+
+// see: https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man2/mmap.2.html
+// http://man7.org/linux/man-pages/man2/mmap.2.html
+// https://searchcode.com/codesearch/view/45933225/
+// https://searchcode.com/codesearch/view/45933225/
+// https://lemire.me/blog/2012/06/26/which-is-fastest-read-fread-ifstream-or-mmap/
 
