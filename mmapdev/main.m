@@ -131,4 +131,5 @@ int main(int argc, char * argv[]) {
 // https://searchcode.com/codesearch/view/45933225/
 // https://searchcode.com/codesearch/view/45933225/
 // https://lemire.me/blog/2012/06/26/which-is-fastest-read-fread-ifstream-or-mmap/
+// example useage: https://github.com/path/FastImageCache
 
