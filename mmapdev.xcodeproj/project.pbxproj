@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA5ABFE1206A0E86000D7620 /* LogWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA5ABFD5206A0E86000D7620 /* LogWriter.cpp */; };
+		AA5ABFE3206A0E86000D7620 /* base64.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA5ABFDA206A0E86000D7620 /* base64.cpp */; };
+		AA5ABFE4206A0E86000D7620 /* TEACipher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA5ABFDC206A0E86000D7620 /* TEACipher.cpp */; };
 		AA92CBE8205EBFBF00642392 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA92CBE7205EBFBF00642392 /* AppDelegate.m */; };
-		AA92CBEB205EBFBF00642392 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA92CBEA205EBFBF00642392 /* ViewController.m */; };
+		AA92CBEB205EBFBF00642392 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA92CBEA205EBFBF00642392 /* ViewController.mm */; };
 		AA92CBEE205EBFBF00642392 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA92CBEC205EBFBF00642392 /* Main.storyboard */; };
 		AA92CBF0205EBFBF00642392 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA92CBEF205EBFBF00642392 /* Assets.xcassets */; };
 		AA92CBF3205EBFBF00642392 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA92CBF1205EBFBF00642392 /* LaunchScreen.storyboard */; };
@@ -36,11 +39,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA5ABFD4206A0E86000D7620 /* LogWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogWriter.h; sourceTree = "<group>"; };
+		AA5ABFD5206A0E86000D7620 /* LogWriter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LogWriter.cpp; sourceTree = "<group>"; };
+		AA5ABFD9206A0E86000D7620 /* base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base64.h; sourceTree = "<group>"; };
+		AA5ABFDA206A0E86000D7620 /* base64.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = base64.cpp; sourceTree = "<group>"; };
+		AA5ABFDB206A0E86000D7620 /* TEACipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEACipher.h; sourceTree = "<group>"; };
+		AA5ABFDC206A0E86000D7620 /* TEACipher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TEACipher.cpp; sourceTree = "<group>"; };
 		AA92CBE3205EBFBF00642392 /* mmapdev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mmapdev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA92CBE6205EBFBF00642392 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AA92CBE7205EBFBF00642392 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		AA92CBE9205EBFBF00642392 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		AA92CBEA205EBFBF00642392 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		AA92CBEA205EBFBF00642392 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		AA92CBED205EBFBF00642392 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA92CBEF205EBFBF00642392 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA92CBF2205EBFBF00642392 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -81,9 +90,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA5ABFD1206A0E86000D7620 /* cpp */ = {
+			isa = PBXGroup;
+			children = (
+				AA5ABFD4206A0E86000D7620 /* LogWriter.h */,
+				AA5ABFD5206A0E86000D7620 /* LogWriter.cpp */,
+				AA5ABFD8206A0E86000D7620 /* tea */,
+			);
+			path = cpp;
+			sourceTree = "<group>";
+		};
+		AA5ABFD8206A0E86000D7620 /* tea */ = {
+			isa = PBXGroup;
+			children = (
+				AA5ABFD9206A0E86000D7620 /* base64.h */,
+				AA5ABFDA206A0E86000D7620 /* base64.cpp */,
+				AA5ABFDB206A0E86000D7620 /* TEACipher.h */,
+				AA5ABFDC206A0E86000D7620 /* TEACipher.cpp */,
+			);
+			path = tea;
+			sourceTree = "<group>";
+		};
 		AA92CBDA205EBFBF00642392 = {
 			isa = PBXGroup;
 			children = (
+				AA5ABFD1206A0E86000D7620 /* cpp */,
 				AA92CBE5205EBFBF00642392 /* mmapdev */,
 				AA92CBFE205EBFC000642392 /* mmapdevTests */,
 				AA92CC09205EBFC000642392 /* mmapdevUITests */,
@@ -107,7 +138,7 @@
 				AA92CBE6205EBFBF00642392 /* AppDelegate.h */,
 				AA92CBE7205EBFBF00642392 /* AppDelegate.m */,
 				AA92CBE9205EBFBF00642392 /* ViewController.h */,
-				AA92CBEA205EBFBF00642392 /* ViewController.m */,
+				AA92CBEA205EBFBF00642392 /* ViewController.mm */,
 				AA92CBEC205EBFBF00642392 /* Main.storyboard */,
 				AA92CBEF205EBFBF00642392 /* Assets.xcassets */,
 				AA92CBF1205EBFBF00642392 /* LaunchScreen.storyboard */,
@@ -271,7 +302,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA92CC1A205EC20500642392 /* mmapdev.c in Sources */,
-				AA92CBEB205EBFBF00642392 /* ViewController.m in Sources */,
+				AA5ABFE1206A0E86000D7620 /* LogWriter.cpp in Sources */,
+				AA92CBEB205EBFBF00642392 /* ViewController.mm in Sources */,
+				AA5ABFE3206A0E86000D7620 /* base64.cpp in Sources */,
+				AA5ABFE4206A0E86000D7620 /* TEACipher.cpp in Sources */,
 				AA92CBF6205EBFC000642392 /* main.m in Sources */,
 				AA92CBE8205EBFBF00642392 /* AppDelegate.m in Sources */,
 			);
@@ -437,7 +471,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GTVM2F95ZD;
+				DEVELOPMENT_TEAM = 8P2R9XN7Q8;
 				INFOPLIST_FILE = mmapdev/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jack.com.mmapdev;
@@ -451,7 +485,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GTVM2F95ZD;
+				DEVELOPMENT_TEAM = 8P2R9XN7Q8;
 				INFOPLIST_FILE = mmapdev/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jack.com.mmapdev;
