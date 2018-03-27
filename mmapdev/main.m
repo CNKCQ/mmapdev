@@ -33,6 +33,10 @@ int main(int argc, char * argv[]) {
 // https://lwn.net/Articles/357767/
 // https://sqlite.org/mmap.html
 // https://www.ibm.com/developerworks/cn/linux/l-ipc/part5/index1.html
+// https://github.com/realm/realm-core/blob/a61e586bf9fccdfb648aa345a786e6cff52010a4/src/realm/util/file_mapper.cpp
+// https://www.sqlite.org/mmap.html
+// https://www.lemoda.net/c/mmap-example/index.html
+// https://gist.github.com/marcetcheverry/991042
 
 
 NS_INLINE int do_mmap() {
