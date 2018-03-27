@@ -18,7 +18,6 @@
 		AA92CBF6205EBFC000642392 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA92CBF5205EBFC000642392 /* main.m */; };
 		AA92CC00205EBFC000642392 /* mmapdevTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA92CBFF205EBFC000642392 /* mmapdevTests.m */; };
 		AA92CC0B205EBFC000642392 /* mmapdevUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA92CC0A205EBFC000642392 /* mmapdevUITests.m */; };
-		AA92CC1A205EC20500642392 /* mmapdev.c in Sources */ = {isa = PBXBuildFile; fileRef = AA92CC19205EC20500642392 /* mmapdev.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +60,6 @@
 		AA92CC06205EBFC000642392 /* mmapdevUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mmapdevUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA92CC0A205EBFC000642392 /* mmapdevUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mmapdevUITests.m; sourceTree = "<group>"; };
 		AA92CC0C205EBFC000642392 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AA92CC18205EC20400642392 /* mmapdev.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mmapdev.h; sourceTree = "<group>"; };
-		AA92CC19205EC20500642392 /* mmapdev.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = mmapdev.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,8 +141,6 @@
 				AA92CBF1205EBFBF00642392 /* LaunchScreen.storyboard */,
 				AA92CBF4205EBFC000642392 /* Info.plist */,
 				AA92CBF5205EBFC000642392 /* main.m */,
-				AA92CC18205EC20400642392 /* mmapdev.h */,
-				AA92CC19205EC20500642392 /* mmapdev.c */,
 			);
 			path = mmapdev;
 			sourceTree = "<group>";
@@ -301,7 +296,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA92CC1A205EC20500642392 /* mmapdev.c in Sources */,
 				AA5ABFE1206A0E86000D7620 /* LogWriter.cpp in Sources */,
 				AA92CBEB205EBFBF00642392 /* ViewController.mm in Sources */,
 				AA5ABFE3206A0E86000D7620 /* base64.cpp in Sources */,
