@@ -40,7 +40,10 @@ NS_INLINE bool writer() {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    writer();
+    dispatch_queue_t queue = dispatch_queue_create("mmapqueue", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_async(queue, ^{
+        writer();
+    });
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
